@@ -26,6 +26,7 @@ BEGIN
         FOR j FROM 0 TO voyelles.length STEP 1 DO
             IF (mot[j]=phrase[i]) THEN
                 nombreVoyelles=nombreVoyelles+1;
+                BREAK;
             END_IF
     END_FOR
 
