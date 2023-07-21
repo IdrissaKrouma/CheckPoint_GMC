@@ -1,0 +1,34 @@
+ALGORITHM PremiereTache
+VAR
+    nombreMots,nombreVoyelles : INTEGER :=0;
+    mot : STRING[20] :="";
+    phrase : STRING[100];
+    voyelles : STRING[] :="aeiouy";
+BEGIN
+    Read(phrase);
+    FOR i FROM 0 TO phrase.length STEP 1 DO
+        IF (phrase[i]=".") THEN
+            BREAK;
+        ELSE_IF (phrase[i]=" ") THEN
+            mot :=""
+        ELSE_IF (phrase[i]<>" ") THEN
+            mot :=mot+i;
+            IF (mot.length>0) THEN
+                nombreMots=nombreMots+1;
+            END_IF
+        END_IF
+    END_FOR
+
+    FOR i FROM 0 TO phrase.length STEP 1 DO
+        IF (phrase[i]=".") THEN
+            BREAK;
+        END_IF
+        FOR j FROM 0 TO voyelles.length STEP 1 DO
+            IF (mot[j]=phrase[i]) THEN
+                nombreVoyelles=nombreVoyelles+1;
+            END_IF
+    END_FOR
+
+    Write("Nombre de mmot est : "+nombreMots);
+    Write(" Nombre de voyelle est : "+nombreVoyelles);
+END

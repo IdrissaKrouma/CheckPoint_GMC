@@ -1,0 +1,18 @@
+ALGORITHM DeuxiemeTache
+VAR
+    somme : INTEGER := 0;
+    jeu1 : INTEGER[20] := [3, 1, 7, 9];
+    jeu2 : INTEGER[20] := [2, 4, 1, 9, 3];
+BEGIN
+    FOR i FROM 0 TO jeu1.length STEP 1 DO
+        FOR j FROM 0 TO jeu2.length STEP 1 DO
+            IF (jeu1[i]=jeu2[j]) THEN
+                BREAK;
+            ELSE_IF (j=jeu2.length) THEN
+                somme := somme+jeu1[i];
+            END_IF
+        END_FOR
+    END_FOR
+
+    Write("Somme des elements distincts: "+somme);
+END
