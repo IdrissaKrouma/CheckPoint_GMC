@@ -14,5 +14,15 @@ BEGIN
         END_FOR
     END_FOR
 
+    FOR j FROM 0 TO jeu2.length STEP 1 DO
+        FOR i FROM 0 TO jeu1.length STEP 1 DO
+            IF (jeu1[i]=jeu2[j]) THEN
+                BREAK;
+            ELSE_IF (i=jeu1.length) THEN
+                somme := somme+jeu2[j];
+            END_IF
+        END_FOR
+    END_FOR
+
     Write("Somme des elements distincts: "+somme);
 END
